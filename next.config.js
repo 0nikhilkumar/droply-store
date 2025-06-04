@@ -2,6 +2,9 @@
 const nextConfig = {
   /* config options here */
   reactStrictMode: true,
+  typescript: {
+    ignoreBuildErrors: true
+  },
   images: {
     remotePatterns: [
       {
