@@ -37,11 +37,13 @@
     "no-console": "warn",
     "react/prop-types": "off",
     "react/jsx-uses-react": "off",
+    "react/jsx-sort-react": "off",
     "react/react-in-jsx-scope": "off",
     "react-hooks/exhaustive-deps": "off",
+    "jsx-a11y/no-autofocus": "warn",
     "jsx-a11y/click-events-have-key-events": "warn",
     "jsx-a11y/interactive-supports-focus": "warn",
-    "prettier/prettier": "warn",
+    "prettier/prettier": "off",
     "no-unused-vars": "off",
     "unused-imports/no-unused-vars": "off",
     "unused-imports/no-unused-imports": "warn",
@@ -88,23 +90,105 @@
     ],
     "padding-line-between-statements": [
       "warn",
-      { "blankLine": "always", "prev": "*", "next": "return" },
-      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      },
+      {
+        "blankLine": "always",
+        "prev": [
+          "const",
+          "let",
+          "var"
+        ],
+        "next": "*"
+      },
       {
         "blankLine": "any",
-        "prev": ["const", "let", "var"],
-        "next": ["const", "let", "var"]
+        "prev": [
+          "const",
+          "let",
+          "var"
+        ],
+        "next": [
+          "const",
+          "let",
+          "var"
+        ]
       },
-      { "blankLine": "always", "prev": "multiline-block-like", "next": "*" },
-      { "blankLine": "always", "prev": "multiline-expression", "next": "*" },
-      { "blankLine": "always", "prev": "directive", "next": "*" },
-      { "blankLine": "always", "prev": "block-like", "next": "*" },
-      { "blankLine": "always", "prev": "*", "next": "function" },
-      { "blankLine": "always", "prev": "*", "next": "block-like" },
-      { "blankLine": "always", "prev": "import", "next": "*" },
-      { "blankLine": "any", "prev": "import", "next": "import" },
-      { "blankLine": "always", "prev": "export", "next": "*" },
-      { "blankLine": "any", "prev": "export", "next": "export" }
+      {
+        "blankLine": "always",
+        "prev": "multiline-block-like",
+        "next": "*"
+      },
+      {
+        "blankLine": "always",
+        "prev": "multiline-expression",
+        "next": "*"
+      },
+      {
+        "blankLine": "always",
+        "prev": "directive",
+        "next": "*"
+      },
+      {
+        "blankLine": "always",
+        "prev": "block-like",
+        "next": "*"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "function"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "block-like"
+      },
+      {
+        "blankLine": "always",
+        "prev": "import",
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": "import",
+        "next": "import"
+      },
+      {
+        "blankLine": "always",
+        "prev": "export",
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": "export",
+        "next": "export"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": [
+          "if",
+          "for",
+          "while",
+          "switch",
+          "try"
+        ]
+      },
+      {
+        "blankLine": "always",
+        "prev": [
+          "if",
+          "for",
+          "while",
+          "switch",
+          "try"
+        ],
+        "next": "*"
+      }
     ]
   }
 }

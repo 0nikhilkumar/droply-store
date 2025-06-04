@@ -13,7 +13,6 @@ const imagekit = new ImageKit({
 });
 
 export async function DELETE(
-  request: NextRequest,
   { params }: { params: { fileId: string } }
 ) {
   try {
