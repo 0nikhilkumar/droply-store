@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
     // Only allow image uploads
     if (!file.type.startsWith("image/") && file.type !== "application/pdf") {
       return NextResponse.json(
-        { error: "Only image files are supported" },
+        { error: "Only image and PDF files are supported" },
         { status: 400 }
       );
     }
@@ -107,3 +107,12 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+
+
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: "100mb",
+    },
+  },
+};

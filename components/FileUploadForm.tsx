@@ -61,9 +61,9 @@ export default function FileUploadForm({
         setError("Only images (JPG, PNG, GIF, WebP) and PDF files are allowed");
         return;
       }
-      // Validate file size (100MB limit)
-      if (selectedFile.size > 100 * 1024 * 1024) {
-        setError("File size exceeds 100MB limit");
+      // Validate file size (5MB limit)
+      if (selectedFile.size > 5 * 1024 * 1024) {
+        setError("File size exceeds 5MB limit");
         return;
       }
 
@@ -82,9 +82,9 @@ export default function FileUploadForm({
         setError("Only images (JPG, PNG, GIF, WebP) and PDF files are allowed");
         return;
       }
-      // Validate file size (100MB limit)
-      if (droppedFile.size > 100 * 1024 * 1024) {
-        setError("File size exceeds 100MB limit");
+      // Validate file size (5MB limit)
+      if (droppedFile.size > 5 * 1024 * 1024) {
+        setError("File size exceeds 5MB limit");
         return;
       }
 
@@ -237,8 +237,8 @@ export default function FileUploadForm({
           error
             ? "border-danger/30 bg-danger/5"
             : file
-              ? "border-primary/30 bg-primary/5"
-              : "border-default-300 hover:border-primary/5"
+            ? "border-primary/30 bg-primary/5"
+            : "border-default-300 hover:border-primary/5"
         }`}
       >
         {!file ? (
@@ -256,7 +256,7 @@ export default function FileUploadForm({
                 </button>
               </p>
               <p className="text-xs text-default-500 mt-1">
-                Images and PDFs up to 100MB
+                Images and PDFs up to 5MB
               </p>
             </div>
             <Input
@@ -282,8 +282,8 @@ export default function FileUploadForm({
                     {file.size < 1024
                       ? `${file.size} B`
                       : file.size < 1024 * 1024
-                        ? `${(file.size / 1024).toFixed(1)} KB`
-                        : `${(file.size / (1024 * 1024)).toFixed(1)} MB`}
+                      ? `${(file.size / 1024).toFixed(1)} KB`
+                      : `${(file.size / (1024 * 1024)).toFixed(1)} MB`}
                   </p>
                 </div>
               </div>
@@ -336,7 +336,7 @@ export default function FileUploadForm({
         <ul className="text-xs text-default-600 space-y-1">
           <li>• Files are private and only visible to you</li>
           <li>• Supported formats: JPG, PNG, GIF, WebP, PDF</li>
-          <li>• Maximum file size: 100MB</li>
+          <li>• Maximum file size: 5MB</li>
         </ul>
       </div>
 

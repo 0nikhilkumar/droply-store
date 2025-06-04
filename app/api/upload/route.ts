@@ -27,12 +27,29 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Only allow images and PDFs
+    const allowedTypes = [
+      "image/png",
+      "image/jpeg",
+      "image/jpg",
+      "image/gif",
+      "image/webp",
+      "image/svg+xml",
+      "application/pdf"
+    ];
+    if (!allowedTypes.includes(imagekit.fileType)) {
+      return NextResponse.json(
+        { error: "Only image and PDF files are supported" },
+        { status: 400 }
+      );
+    }
+
     // Extract file information from ImageKit response
     const fileData = {
       name: imagekit.name || "Untitled",
       path: imagekit.filePath || `/droply/${userId}/${imagekit.name}`,
       size: imagekit.size || 0,
-      type: imagekit.fileType || "image",
+      type: imagekit.fileType || "application/octet-stream",
       fileUrl: imagekit.url,
       thumbnailUrl: imagekit.thumbnailUrl || null,
       userId: userId,
